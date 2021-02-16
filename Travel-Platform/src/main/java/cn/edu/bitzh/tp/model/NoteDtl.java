@@ -10,23 +10,21 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import org.apache.struts2.json.annotations.JSON;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
-import com.opensymphony.xwork2.util.Key;
-
-@Table
-@Entity(name = "t_note_dtl")
 /**
- *  游记内容
+ * 游记内容
+ * 
  * @author 古学懂_Victor
  * @date 2020年5月5日
  */
+@Table
+@Entity(name = "t_note_dtl")
 public class NoteDtl {
 	@Id
-	@GenericGenerator(name = "fk", 
-	strategy = "foreign", 
-	parameters = @Parameter(name="property", value="note"))
+	@GenericGenerator(name = "fk", strategy = "foreign", parameters = @Parameter(name = "property", value = "note"))
 	@GeneratedValue(generator = "fk")
 	@Column(name = "note_id")
 	private int noteId;
@@ -35,6 +33,9 @@ public class NoteDtl {
 	@Lob
 	@Column(name = "note_content")
 	private String noteContent;
+	@Lob
+	@Column(name = "note_toppic")
+	private String noteToppic;
 	@OneToOne(optional = false, fetch = FetchType.LAZY)
 	@PrimaryKeyJoinColumn
 	private Note note;
@@ -63,6 +64,7 @@ public class NoteDtl {
 		this.noteHeader = noteHeader;
 	}
 
+	@JSON(serialize = false)
 	public String getNoteContent() {
 		return noteContent;
 	}
@@ -70,5 +72,19 @@ public class NoteDtl {
 	public void setNoteContent(String noteContent) {
 		this.noteContent = noteContent;
 	}
+	
+	/**
+	 * @return the noteToppic
+	 */
+	public String getNoteToppic() {
+		return noteToppic;
+	}
 
+	/**
+	 * @param noteToppic the noteToppic to set
+	 */
+	public void setNoteToppic(String noteToppic) {
+		this.noteToppic = noteToppic;
+	}
+	
 }

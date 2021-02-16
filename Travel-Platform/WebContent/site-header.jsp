@@ -1,29 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div class="ms-Grid" dir="ltr" id="header">
-	<div class="ms-Grid-row">
-		<div class="ms-Grid-col ms-sm6 ms-md4 ms-lg2">
-			<div class="ms-ContextualMenu-basic">
-				<button class="ms-Button ms-Button--primary">
-					<span class="ms-Button-label"> <i
-						class="ms-Icon ms-Icon--ExpandMenu" aria-hidden="true"></i>&nbsp;&nbsp;选择功能
-					</span>
+<!DOCTYPE html>
+<div id="header" class="">
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="/Travel-Platform"> <img
+			src="/Travel-Platform/_img/TP-logo.svg" alt="" width="32" height="32"
+			title="TP"> <%="旅游平台"%>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link"
+					href="/Travel-Platform">首页 <span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/Travel-Platform/scenerylist_getSceneryList.action">目的地</a></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">社区</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<!-- <a class="dropdown-item" href="#">问答</a> -->
+						<a class="dropdown-item" href="#">点评</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/Travel-Platform/note/edit">创建游记</a>
+					</div></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/Travel-Platform/produce_page.action?currPage=1">去旅行</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">我的</a></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="在想什么……" aria-label="Search">
+				<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+					<svg class="bi bi-search" width="1em" height="1em"
+						viewBox="0 0 16 16" fill="currentColor"
+						xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd"
+							d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+  <path fill-rule="evenodd"
+							d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+</svg>
 				</button>
-				<ul class="ms-ContextualMenu is-hidden">
-					<li class="ms-ContextualMenu-item"><a
-						class="ms-ContextualMenu-link" tabindex="1" href="/Travle-Platform/signup.jsp">注册</a></li>
-					<li class="ms-ContextualMenu-item"><a
-						class="ms-ContextualMenu-link" tabindex="1" href="/Travle-Platform/signin.jsp">登录</a></li>
-					<li class="ms-ContextualMenu-item"><a
-						class="ms-ContextualMenu-link" tabindex="1"
-						href="/Travle-Platform/studentsManagement/studentsManagement.jsp">管理</a></li>
-				</ul>
-			</div>
+			</form>
 		</div>
-		<div class="ms-Grid-col ms-sm6 ms-md8 ms-lg10 ms-Link"
-			id="header-right">
-			<i class="ms-Icon ms-Icon--CoffeeScript" aria-hidden="true"></i>&nbsp;
-			<a href="/Travle-Platform/index.jsp" title="首页" class="">旅游平台</a>
-		</div>
-	</div>
+	</nav>
 </div>
